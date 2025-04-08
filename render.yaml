@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sistema-rh-backend
+    env: python
+    plan: free
+    region: oregon
+    branch: main
+    rootDir: core
+    buildCommand: "pip install -r ../requirements.txt"
+    startCommand: "gunicorn core.core.wsgi:application --log-file -"
+    envVars:
+      - key: SECRET_KEY
+        sync: false
+      - key: SUPABASE_DATABASE_URL
+        sync: false
+      - key: PYTHONPATH
+        value: .
