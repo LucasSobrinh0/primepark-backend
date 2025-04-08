@@ -94,12 +94,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 import dj_database_url
+from decouple import config
 
 DATABASES = {
     'default': dj_database_url.parse(
-        "postgresql://postgres:q8tAGf5kzKi6O2zO@db.pavfengvzjbpqeaortmo.supabase.co:5432/postgres",  # substitua pela conexão copiada do Supabase
+        config("SUPABASE_DATABASE_URL"),
         conn_max_age=600,
-        ssl_require=True  # importante para o Render funcionar com SSL
+        ssl_require=True
     )
 }
 # Password validation
