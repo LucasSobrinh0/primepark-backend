@@ -19,13 +19,10 @@ SECRET_KEY = 'django-insecure--w--yfn982p_qq+szs0ag&%3pn6micgh-5wal38sqzl*akz=3k
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "primepark-backend.onrender.com"
+    "primepark-backend.onrender.com",
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
     "https://primepark-frontend.onrender.com"
 ]
 
